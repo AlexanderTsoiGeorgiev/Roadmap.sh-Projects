@@ -7,21 +7,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{256F4E96-6A7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListAPI.web", "Web\TodoListAPI.web\TodoListAPI.web.csproj", "{9C3231D8-8307-44B0-A745-59F4BBF3C1CA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{015FE221-96B2-289B-A0E8-6E7354784A75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListAPI.Data", "Data\TodoListAPI.Data\TodoListAPI.Data.csproj", "{274EEA57-387D-455B-B597-957A811370F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListAPI.Data.Models", "Data\TodoListAPI.Data.Models\TodoListAPI.Data.Models.csproj", "{BC950221-4D4E-4405-8072-21721ACC7C81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9C3231D8-8307-44B0-A745-59F4BBF3C1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9C3231D8-8307-44B0-A745-59F4BBF3C1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C3231D8-8307-44B0-A745-59F4BBF3C1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C3231D8-8307-44B0-A745-59F4BBF3C1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274EEA57-387D-455B-B597-957A811370F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274EEA57-387D-455B-B597-957A811370F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274EEA57-387D-455B-B597-957A811370F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274EEA57-387D-455B-B597-957A811370F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC950221-4D4E-4405-8072-21721ACC7C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC950221-4D4E-4405-8072-21721ACC7C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC950221-4D4E-4405-8072-21721ACC7C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC950221-4D4E-4405-8072-21721ACC7C81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9C3231D8-8307-44B0-A745-59F4BBF3C1CA} = {256F4E96-6A73-9ABE-786F-840C672A50F4}
+		{274EEA57-387D-455B-B597-957A811370F2} = {015FE221-96B2-289B-A0E8-6E7354784A75}
+		{BC950221-4D4E-4405-8072-21721ACC7C81} = {015FE221-96B2-289B-A0E8-6E7354784A75}
 	EndGlobalSection
 EndGlobal

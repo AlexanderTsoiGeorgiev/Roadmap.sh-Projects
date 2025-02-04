@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using TodoListAPI.Data;
+using TodoListAPI.Data.Models;
+
 namespace TodoListAPI.web;
 
 public class Program
@@ -5,6 +10,16 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        string connectionString = builder.Configuration.GetConnectionString("Default Connection") ?? throw new ArgumentNullException("Connection string 'Default Connection' not found!");
+        builder.Services.AddDbContext<TodoListApiDbContext>(options =>
+        {
+            options.UseSqlServer(connectionString);
+        });
+
+        builder.Services
+        .AddIdentity<ApplicationUser, IdentityRole>()
+        .AddEntityFrameworkStores<TodoListApiDbContext>();
 
         // Add services to the container.
 
