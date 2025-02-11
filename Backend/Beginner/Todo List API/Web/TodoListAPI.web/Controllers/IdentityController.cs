@@ -47,7 +47,7 @@ namespace TodoListAPI.web.Controllers
 
                 return Ok(); 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return StatusCode(500, "Unexpecte Error Occured!");
             }

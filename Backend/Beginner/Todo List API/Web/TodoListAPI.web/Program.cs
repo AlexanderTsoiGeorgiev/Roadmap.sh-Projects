@@ -18,12 +18,11 @@ public class Program
         {
             options.UseSqlServer(connectionString);
         });
-
         builder.Services
         .AddIdentity<ApplicationUser, IdentityRole>(options => {
-            options.Password.RequireLowercase = false;
-            options.Password.RequireUppercase = false;
-            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireLowercase = builder.Configuration.GetValue<bool>("PasswordSettings:RequireLowercase");
+            options.Password.RequireUppercase = builder.Configuration.GetValue<bool>("PasswordSettings:RequireUppercase");
+            options.Password.RequireNonAlphanumeric = builder.Configuration.GetValue<bool>("PasswordSettings:RequireNonAlphanumeric");;
         })
         .AddEntityFrameworkStores<TodoListApiDbContext>();
 
