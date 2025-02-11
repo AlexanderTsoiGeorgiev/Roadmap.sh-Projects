@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using TodoListAPI.Data;
 using TodoListAPI.Data.Models;
 
@@ -18,10 +20,31 @@ public class Program
         });
 
         builder.Services
-        .AddIdentity<ApplicationUser, IdentityRole>()
+        .AddIdentity<ApplicationUser, IdentityRole>(options => {
+            options.Password.RequireLowercase = false;
+            options.Password.RequireUppercase = false;
+            options.Password.RequireNonAlphanumeric = false;
+        })
         .AddEntityFrameworkStores<TodoListApiDbContext>();
 
+
+        //try this only and shee what is the differene
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
+        // .AddJwtBearer(options =>
+        // {
+        //     options.TokenValidationParameters = new TokenValidationParameters
+        //     {
+        //         ValidateIssuer = true,
+        //         ValidIssuer = ,
+        //         ValidateAudience = true,
+        //         ValidAudience = ,
+        //         ValidateIssuerSigningKey = true,
+        //         IssuerSigningKey = new Systemsym
+        //     };
+        // });
+
         // Add services to the container.
+        
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -39,6 +62,7 @@ public class Program
 
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
 
